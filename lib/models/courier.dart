@@ -1,41 +1,43 @@
+import 'models.dart';
+
 class CourierFields {
   static const String id = 'id';
-  static const String fullname = 'fullname';
-  static const String address = 'address';
+  static const String user = 'user';
   static const String deliveries = 'deliveries';
+  static const String rating = 'rating';
 
   static List<String> getFields() => [
         id,
-        fullname,
+        user,
         deliveries,
-        address,
+        rating,
       ];
 }
 
 class Courier {
   final int? id;
-  final String fullname;
-  final String address;
+  final User user;
   final int deliveries;
+  final int? rating;
 
   const Courier({
     this.id,
-    required this.fullname,
+    this.rating,
+    required this.user,
     required this.deliveries,
-    required this.address,
   });
 
   static Courier fromJson(Map<String, dynamic> json) => Courier(
         id: json[CourierFields.id],
-        fullname: json[CourierFields.fullname],
+        user: json[CourierFields.user],
         deliveries: json[CourierFields.deliveries],
-        address: json[CourierFields.address],
+        rating: json[CourierFields.rating] = 1,
       );
 
   Map<String, dynamic> toJson() => {
         CourierFields.id: id,
-        CourierFields.fullname: fullname,
+        CourierFields.user: user,
         CourierFields.deliveries: deliveries,
-        CourierFields.address: address,
+        CourierFields.rating: rating,
       };
 }

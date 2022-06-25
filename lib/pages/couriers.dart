@@ -17,7 +17,7 @@ class Couriers extends StatefulWidget {
 class _Courierstate extends State<Couriers> {
   String query = '';
   bool isLoading = true;
-  List<Courier> couriers = localCouriers;
+  List<TestCourier> couriers = localCouriers;
 
 // search functonality
   void searchDataset(String query) {
@@ -69,7 +69,7 @@ class _Courierstate extends State<Couriers> {
               child: Icon(TablerIcons.search, color: Colors.grey, size: 16),
             ),
             Expanded(
-                child: SearchField(
+                child: AppSearchField(
               hint: 'Find an courier...',
               onChanged: searchDataset,
             )),

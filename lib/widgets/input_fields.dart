@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class TextInputField extends StatelessWidget {
-  const TextInputField(
+class AppTextField extends StatelessWidget {
+  const AppTextField(
       {Key? key,
       required this.title,
       required this.hint,
@@ -73,8 +73,8 @@ class TextInputField extends StatelessWidget {
   }
 }
 
-class TextAreaField extends StatelessWidget {
-  const TextAreaField(
+class AppTextAreaField extends StatelessWidget {
+  const AppTextAreaField(
       {Key? key,
       required this.title,
       required this.hint,
@@ -145,8 +145,8 @@ class TextAreaField extends StatelessWidget {
   }
 }
 
-class NumInputField extends StatelessWidget {
-  const NumInputField(
+class AppNumField extends StatelessWidget {
+  const AppNumField(
       {Key? key,
       required this.title,
       required this.hint,
@@ -216,8 +216,8 @@ class NumInputField extends StatelessWidget {
   }
 }
 
-class SearchField extends StatelessWidget {
-  const SearchField(
+class AppSearchField extends StatelessWidget {
+  const AppSearchField(
       {Key? key,
       required this.hint,
       this.controller,
@@ -264,6 +264,65 @@ class SearchField extends StatelessWidget {
               : Container(
                   child: widget,
                 )
+        ],
+      ),
+    );
+  }
+}
+
+class TextEditField extends StatefulWidget {
+  const TextEditField(
+      {Key? key,
+      required this.label,
+      required this.text,
+      required this.onChanged,
+      this.maxLines = 1})
+      : super(key: key);
+
+  final int maxLines;
+  final String label;
+  final String text;
+  final ValueChanged<String> onChanged;
+
+  @override
+  _TextEditFieldState createState() => _TextEditFieldState();
+}
+
+class _TextEditFieldState extends State<TextEditField> {
+  late final TextEditingController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = TextEditingController(text: widget.text);
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(widget.label,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 22)),
+          const SizedBox(height: 8),
+          TextField(
+            controller: controller,
+            maxLines: widget.maxLines,
+            decoration: InputDecoration(
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(8))),
+          )
         ],
       ),
     );

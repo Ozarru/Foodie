@@ -1,33 +1,37 @@
-import 'package:foodie/models/eatry.dart';
+import 'models.dart';
 
-class MenuGroup {
-  final int? id;
-  final String name;
+class MealGroup {
+  final String? id;
   final Eatry eatry;
+  final String name;
   final String? description;
+  final List<Meal>? meals;
 
-  const MenuGroup({
+  const MealGroup({
     this.id,
     required this.eatry,
     required this.name,
     this.description,
+    this.meals,
   });
 
-  factory MenuGroup.fromMap(Map<String, dynamic> json) => MenuGroup(
+  factory MealGroup.fromJson(Map<String, dynamic> json) => MealGroup(
         id: json['id'],
         name: json['name'],
         eatry: json['eatry'],
         description: json['description'],
+        meals: json['meals'],
       );
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toJson() {
     return {
       'id': id,
+      'eatry': eatry,
       'name': name,
       'description': description,
+      'meals': meals,
     };
   }
 
-  @override
-  List<Object?> get props => [id, name, description];
+  List<Object?> get props => [id, eatry, name, description, meals];
 }

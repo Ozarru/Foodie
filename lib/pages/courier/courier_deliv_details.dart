@@ -11,7 +11,7 @@ import '../../widgets/widgets.dart';
 class DeliveryDetails extends StatelessWidget {
   const DeliveryDetails({Key? key, required this.delivery}) : super(key: key);
 
-  final Delivery delivery;
+  final TestDelivery delivery;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

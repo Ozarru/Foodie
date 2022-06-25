@@ -2,14 +2,20 @@ import 'models.dart';
 
 class Invoice {
   const Invoice({
-    required this.eatry,
     required this.id,
-    required this.date,
+    required this.eatry,
+    required this.client,
+    required this.courier,
     required this.items,
+    required this.date,
+    required this.total,
   });
 
-  final Eatry eatry;
   final int id;
-  final DateTime date;
+  final num total;
+  final Eatry eatry;
+  final User client;
+  final User courier;
   final List<Meal> items;
+  final DateTime date;
 }

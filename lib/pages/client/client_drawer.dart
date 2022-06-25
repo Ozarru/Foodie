@@ -19,6 +19,13 @@ class ClientDrawer extends StatelessWidget {
         child: Column(
           children: [
             Container(
+              alignment: Alignment.topLeft,
+              width: double.infinity,
+              padding: EdgeInsets.all(16),
+              color: Colors.grey[200],
+              child: Image.asset('assets/branding/logo.png', height: 100),
+            ),
+            Container(
               alignment: Alignment.center,
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
@@ -32,22 +39,22 @@ class ClientDrawer extends StatelessWidget {
                   DrawerTile(
                     label: 'Home',
                     icon: TablerIcons.home_2,
-                    route: '/',
+                    route: '/client-base',
                   ),
                   DrawerTile(
-                    label: 'New order',
-                    icon: TablerIcons.square_plus,
-                    route: '/order',
-                  ),
-                  DrawerTile(
-                    label: 'Get food',
-                    icon: Icons.restaurant_menu_outlined,
+                    label: 'Order food',
+                    icon: Icons.food_bank,
                     route: '/menu',
                   ),
                   DrawerTile(
                     label: 'Restaurants',
                     icon: Icons.restaurant,
                     route: '/eatries',
+                  ),
+                  DrawerTile(
+                    label: 'History',
+                    icon: TablerIcons.history,
+                    route: '/history',
                   ),
                   DrawerTile(
                     label: 'Profile',

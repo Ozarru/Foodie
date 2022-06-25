@@ -1,17 +1,17 @@
 import '../models/models.dart';
 
 const localDeliveries = [
-  Delivery(
+  TestDelivery(
     id: 1,
     eatry: "Mc Donald's",
     client: "Jason",
-    eta: 20,
+    eta: 30,
     price: 200,
     address: "23 cali road",
     items: ['burger', 'French fries'],
     payvet: true,
   ),
-  Delivery(
+  TestDelivery(
     id: 2,
     eatry: "Croute Doree",
     client: "Henriette",
@@ -21,7 +21,7 @@ const localDeliveries = [
     items: ['Croisant', 'Bagguettes'],
     payvet: true,
   ),
-  Delivery(
+  TestDelivery(
     id: 3,
     eatry: "Ci-gusta",
     client: "Antoine",

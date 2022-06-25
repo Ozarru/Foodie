@@ -1,0 +1,3 @@
+const String googleAPIKey = 'AIzaSyDHaMN2shRmyhsLpGrAB10iGZaU3DpZHAY';
+const String apiURL =
+    'https://script.googleusercontent.com/macros/echo?user_content_key=SRXU_TPPkGckEXyC7ysjrbRKaDmers420Ph-s0L9EhoXDJ-EMhJ8IaqVK4k1H46O-zFSFxduxFPZ9tLvzxBfJ0-NkW2BAcMwm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnJMXhIWa3sWsRLk6Jp8lX_4xQM_YBGmCH8kim3ipCriDkY6ovvw7Yg4agKLzNY_0hVWpSAnozzaxDE8TOtOTeuVkf6558cMJ4Q&lib=Mihv-qU5xekdwv0Wc_WaEz-moYUuf4DQi';

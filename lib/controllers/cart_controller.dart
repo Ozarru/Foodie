@@ -5,51 +5,51 @@ import 'package:get/get.dart';
 import '../models/models.dart';
 
 class CartController extends GetxController {
-  final _items = {}.obs;
+  final _meals = {}.obs;
 
-  void additem(MenuItem item) {
-    if (_items.containsKey(item)) {
-      _items[item] += 1;
+  void addMeal(TestMeal meal) {
+    if (_meals.containsKey(meal)) {
+      _meals[meal] += 1;
     } else {
-      _items[item] = 1;
+      _meals[meal] = 1;
     }
   }
 
-  void removeitem(MenuItem item) {
-    if (_items.containsKey(item) && _items[item] == 1) {
-      _items.removeWhere((key, value) => key == item);
+  void removeMeal(TestMeal meal) {
+    if (_meals.containsKey(meal) && _meals[meal] == 1) {
+      _meals.removeWhere((key, value) => key == meal);
     } else {
-      _items[item] -= 1;
+      _meals[meal] -= 1;
     }
   }
 
-  void clearCart(RxMap<dynamic, dynamic> items) {
-    while (items.isNotEmpty) {
-      items.forEach((key, value) => _items.remove(key));
+  void clearCart(RxMap<dynamic, dynamic> meals) {
+    while (meals.isNotEmpty) {
+      meals.forEach((key, value) => _meals.remove(key));
       debugPrint('cart cleared');
     }
 
-    // for (var item in items.keys) {
-    //   _items.removeWhere((key, value) => key == item);
+    // for (var meal in meals.keys) {
+    //   _meals.removeWhere((key, value) => key == meal);
     // }
   }
 
   final _tax = 18.0;
 
-  get items => _items;
+  get meals => _meals;
 
   get tax => _tax;
 
-  get total => _items.entries
-      .map((item) => item.key.netPrice * item.value)
+  get total => _meals.entries
+      .map((meal) => meal.key.price * meal.value)
       .toList()
       .reduce((value, element) => value + element)
       .toStringAsFixed(0);
 
-  get itemCount => _items.entries
-      .map((item) => item.value)
+  get itemCount => _meals.entries
+      .map((meal) => meal.value)
       .toList()
       .reduce((value, element) => value + element);
 
-  get itemsCount => _items.length;
+  get mealsCount => _meals.length;
 }

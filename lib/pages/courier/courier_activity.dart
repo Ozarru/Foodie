@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/widgets.dart';
+
 class CourierActivity extends StatelessWidget {
   const CourierActivity({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CourierAppBar(
+        title: 'Activity',
+      ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: ListView(
@@ -28,7 +33,7 @@ class CourierActivity extends StatelessWidget {
   Widget buildSummary(context) {
     return Container(
       padding: EdgeInsets.all(16),
-      height: 160,
+      height: 200,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20), color: Colors.red[50]),
       child: Column(
@@ -86,7 +91,7 @@ class CourierActivity extends StatelessWidget {
   Widget buildJobs(context) {
     return Container(
       padding: EdgeInsets.all(16),
-      height: 150,
+      height: 200,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20), color: Colors.green[50]),
       child: Column(
@@ -143,7 +148,7 @@ class CourierActivity extends StatelessWidget {
   Widget buildRatings(context) {
     return Container(
       padding: EdgeInsets.all(16),
-      height: 150,
+      height: 200,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20), color: Colors.blue[50]),
       child: Column(

@@ -1,13 +1,15 @@
 // ignore_for_file: prefer_const_constructors
 
 // import 'package:firebase_auth/firebase_auth.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import '/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:tabler_icons/tabler_icons.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
-import '../../../controllers/google_auth.dart';
+import '../../controllers/google_auth.dart';
 
 class AdminDrawer extends StatelessWidget {
   const AdminDrawer({Key? key}) : super(key: key);
@@ -18,6 +20,13 @@ class AdminDrawer extends StatelessWidget {
       child: Drawer(
         child: Column(
           children: [
+            Container(
+              alignment: Alignment.topLeft,
+              width: double.infinity,
+              padding: EdgeInsets.all(16),
+              color: Colors.grey[200],
+              child: Image.asset('assets/branding/logo.png', height: 100),
+            ),
             Container(
               alignment: Alignment.center,
               width: double.infinity,
@@ -32,17 +41,27 @@ class AdminDrawer extends StatelessWidget {
                   DrawerTile(
                     label: 'Home',
                     icon: TablerIcons.home_2,
-                    route: '/',
-                  ),
-                  DrawerTile(
-                    label: 'View Menu',
-                    icon: Icons.restaurant_menu_outlined,
                     route: '/menu',
                   ),
                   DrawerTile(
-                    label: 'Restaurant Profile',
-                    icon: TablerIcons.user,
-                    route: '/profile',
+                    label: 'Orders',
+                    icon: TablerIcons.receipt,
+                    route: '/orders',
+                  ),
+                  DrawerTile(
+                    label: 'Dashboard',
+                    icon: Icons.dashboard,
+                    route: '/dasboard',
+                  ),
+                  DrawerTile(
+                    label: 'Messages',
+                    icon: TablerIcons.message_circle,
+                    route: '/messages',
+                  ),
+                  DrawerTile(
+                    label: 'Restaurant profile',
+                    icon: Icons.store,
+                    route: '/restaurant',
                   ),
                   DrawerTile(
                     label: 'Settings',
@@ -50,14 +69,20 @@ class AdminDrawer extends StatelessWidget {
                     route: '/settings',
                   ),
                   DrawerTile(
-                    label: 'Use as courier',
-                    icon: Icons.delivery_dining,
-                    route: '/courier-base',
+                    label: 'Help & Support',
+                    icon: TablerIcons.help,
+                    route: '/help',
                   ),
+                  Divider(color: Colors.grey),
                   DrawerTile(
                     label: 'Use as client',
                     icon: Icons.person,
                     route: '/client-base',
+                  ),
+                  DrawerTile(
+                    label: 'Use as courier',
+                    icon: Icons.delivery_dining,
+                    route: '/courier-base',
                   ),
                   // Padding(
                   //   padding: const EdgeInsets.symmetric(

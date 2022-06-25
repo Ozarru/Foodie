@@ -44,7 +44,8 @@ class Settings extends StatelessWidget {
                       style: TextButton.styleFrom(
                           padding: EdgeInsets.all(16),
                           primary: Colors.white,
-                          backgroundColor: Theme.of(context).primaryColor),
+                          backgroundColor:
+                              Theme.of(context).colorScheme.primary),
                     ),
                   ),
                   Divider(),
@@ -59,20 +60,20 @@ class Settings extends StatelessWidget {
                       title: 'Language',
                       icon: Icons.translate,
                       route: '/language'),
-                  const SettingsTile(
-                      title: 'Currency',
-                      icon: Icons.attach_money,
-                      route: '/currency'),
+                  // const SettingsTile(
+                  //     title: 'Currency',
+                  //     icon: Icons.attach_money,
+                  //     route: '/currency'),
                   const SettingsTile(
                       title: 'Notifications',
                       icon: Icons.notifications_outlined,
                       route: '/notify'),
                   const SettingsTile(
-                      title: 'My Stats',
+                      title: 'Stats',
                       icon: TablerIcons.chart_bar,
                       route: '/stats'),
                   const SettingsTile(
-                      title: 'Share Dxter',
+                      title: 'Share Foodie',
                       icon: Icons.ios_share,
                       route: '/share'),
                   const SettingsTile(

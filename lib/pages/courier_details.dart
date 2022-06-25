@@ -10,7 +10,7 @@ import '../../widgets/widgets.dart';
 class CourierDetails extends StatelessWidget {
   const CourierDetails({Key? key, required this.courier}) : super(key: key);
 
-  final Courier courier;
+  final TestCourier courier;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/widgets.dart';
+
 class ClientActivity extends StatelessWidget {
   const ClientActivity({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const ClientAppBar(title: 'Activity'),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: ListView(

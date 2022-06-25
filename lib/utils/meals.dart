@@ -4,59 +4,70 @@ import 'package:flutter/material.dart';
 import '../models/models.dart';
 
 const localMeals = [
-  Meal(
-    image: "assets/static/buger.png",
+  TestMeal(
+    image: "assets/meals/burger.webp",
     name: 'Burger & Fries',
     price: 2500,
+    isOnMenu: true,
   ),
-  Meal(
-    image: "assets/static/salad.png",
+  TestMeal(
+    image: "assets/meals/salad.webp",
     name: 'Salad',
     price: 4500,
+    isOnMenu: true,
   ),
-  Meal(
-    image: "assets/static/borito.png",
-    name: 'Borito',
+  TestMeal(
+    image: "assets/meals/burrito.webp",
+    name: 'Burrito',
     price: 2300,
+    isOnMenu: false,
   ),
-  Meal(
-    image: "assets/static/rice.png",
-    name: 'Fried Rice',
+  TestMeal(
+    image: "assets/meals/canto-rice.webp",
+    name: 'Cantonese Rice',
     price: 3500,
+    isOnMenu: true,
   ),
-  Meal(
-    image: "assets/static/pizza.png",
+  TestMeal(
+    image: "assets/meals/pizza.webp",
     name: 'pizza',
     price: 6500,
+    isOnMenu: false,
   ),
-  Meal(
-    image: "assets/static/croissant.png",
+  TestMeal(
+    image: "assets/meals/croissant.webp",
     name: 'croissant',
     price: 500,
+    isOnMenu: false,
   ),
-  Meal(
-    image: "assets/static/cupcake.png",
-    name: 'cupcake',
+  TestMeal(
+    image: "assets/meals/muffins.webp",
+    name: 'muffins',
     price: 500,
+    isOnMenu: false,
   ),
-  Meal(
-    image: "assets/static/cheesecake.png",
+  TestMeal(
+    image: "assets/meals/cheesecake.webp",
     name: 'cheesecake',
     price: 4500,
+    isOnMenu: true,
   ),
-  Meal(
-    image: "assets/static/cola.png",
+  TestMeal(
+    image: "assets/meals/cola.webp",
     name: 'cola',
     price: 1000,
+    isOnMenu: false,
   ),
-  Meal(
-    image: "assets/static/cocktail.png",
+  TestMeal(
+    image: "assets/meals/cocktail.webp",
     name: 'cocktail',
     price: 2500,
+    isOnMenu: false,
   ),
-  Meal(
-    image: "assets/static/juice.png",
+  TestMeal(
+    image: "assets/meals/juice.webp",
     name: 'juice',
     price: 1500,
+    isOnMenu: false,
   ),
 ];

@@ -6,6 +6,7 @@ import '../../utils/utils.dart';
 import '../../models/models.dart';
 import '../../widgets/widgets.dart';
 import '/pages/pages.dart';
+import 'client_drawer.dart';
 
 class Menu extends StatefulWidget {
   const Menu({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class Menu extends StatefulWidget {
 class _Menustate extends State<Menu> {
   String query = '';
   bool isLoading = true;
-  List<Meal> meals = localMeals;
+  List<TestMeal> meals = localMeals;
 
 // search functonality
   void searchDataset(String query) {
@@ -40,6 +41,8 @@ class _Menustate extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const ClientAppBar(title: 'Meals'),
+      drawer: const ClientDrawer(),
       body: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -49,7 +52,7 @@ class _Menustate extends State<Menu> {
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: buildPaginatedSearch(),
             ),
-            Expanded(child: buildList(meals))
+            Expanded(child: buildMealGrid(meals))
           ]),
     );
   }
@@ -69,57 +72,50 @@ class _Menustate extends State<Menu> {
               child: Icon(TablerIcons.search, color: Colors.grey, size: 16),
             ),
             Expanded(
-                child: SearchField(
-              hint: 'Search an menu...',
+                child: AppSearchField(
+              hint: 'Find your meal...',
               onChanged: searchDataset,
             )),
-            // PopupMenuButton<meal>(
-            //   icon: const Icon(
-            //     TablerIcons.filter,
-            //     color: Colors.grey,
-            //   ),
-            //   itemBuilder: (context) =>
-            //       [...FoodFilter.filertIcons.map(buildItem).toList()],
-            // )
+            PopupMenuButton<MenuItem>(
+              icon: const Icon(
+                TablerIcons.filter,
+                color: Colors.grey,
+              ),
+              itemBuilder: (context) =>
+                  [...MealFilter.filertIcons.map(buildItem).toList()],
+            )
           ],
         ),
       ),
     );
   }
 
-  // Popupmeal<meal> buildItem(FilterIcon filertIcon) {
-  //   return Popupmeal(
-  //     child: Row(
-  //       children: [
-  //         Icon(
-  //           filertIcon.icon,
-  //           color: Colors.grey,
-  //         ),
-  //         const Spacer(),
-  //         Text(filertIcon.label),
-  //       ],
-  //     ),
-  //   );
-  // }
+  PopupMenuItem<MenuItem> buildItem(FilterIcon filertIcon) {
+    return PopupMenuItem(
+      child: Row(
+        children: [
+          Icon(
+            filertIcon.icon,
+            color: Colors.grey,
+          ),
+          const Spacer(),
+          Text(filertIcon.label),
+        ],
+      ),
+    );
+  }
 
-  Widget buildList(meals) {
-    return ListView.builder(
-        shrinkWrap: true,
-        physics: const BouncingScrollPhysics(),
-        itemCount: meals.length,
-        itemBuilder: (context, index) {
-          final meal = meals[index];
-          return GestureDetector(
-            onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => MealDetails(meal: meal))),
-            child: MenuTile(
-              image: meal.image,
-              name: meal.name,
-              price: meal.price,
-            ),
-          );
-        });
+  Widget buildMealGrid(meals) {
+    if (Responsive.isMobile(context)) {
+      return MenuGrid(meals: meals, gridCount: 2);
+    } else if (Responsive.isTablet(context)) {
+      return MenuGrid(meals: meals, gridCount: 3);
+    } else if (Responsive.isDesktop(context)) {
+      return MenuGrid(meals: meals, gridCount: 5);
+    } else if (Responsive.isWideDesktop(context)) {
+      return MenuGrid(meals: meals, gridCount: 7);
+    } else {
+      return MenuGrid(meals: meals, gridCount: 10);
+    }
   }
 }

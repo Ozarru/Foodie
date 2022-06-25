@@ -6,6 +6,7 @@ import '../utils/filter_icons.dart';
 import '../utils/utils.dart';
 import '../models/models.dart';
 import '../widgets/widgets.dart';
+import 'client/client_drawer.dart';
 import 'eatry_details.dart';
 
 class Eatries extends StatefulWidget {
@@ -18,7 +19,7 @@ class Eatries extends StatefulWidget {
 class _Eatriestate extends State<Eatries> {
   String query = '';
   bool isLoading = true;
-  List<Eatry> eatries = localEatries;
+  List<TestEatry> eatries = localEatries;
 
 // search functonality
   void searchDataset(String query) {
@@ -41,6 +42,8 @@ class _Eatriestate extends State<Eatries> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const ClientAppBar(title: 'Restaurants'),
+      drawer: const ClientDrawer(),
       body: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -70,7 +73,7 @@ class _Eatriestate extends State<Eatries> {
               child: Icon(TablerIcons.search, color: Colors.grey, size: 16),
             ),
             Expanded(
-                child: SearchField(
+                child: AppSearchField(
               hint: 'Find an eatry...',
               onChanged: searchDataset,
             )),
@@ -117,7 +120,7 @@ class _Eatriestate extends State<Eatries> {
                 MaterialPageRoute(
                     builder: (context) => EatryDetails(eatry: eatry))),
             child: EatryTile(
-              // image: eatry.image,
+              image: eatry.image,
               name: eatry.name,
               email: eatry.email,
               address: eatry.address,

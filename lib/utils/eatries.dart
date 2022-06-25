@@ -1,8 +1,9 @@
 import '../models/models.dart';
 
 const localEatries = [
-  Eatry(
+  TestEatry(
       id: 1,
+      image: 'assets/static/eatry-pub.webp',
       name: 'FastFoodie',
       email: 'mgt@fastfoodie.com',
       address: '105 rue Tchoou Ablogame Lome-Togo',
@@ -12,8 +13,9 @@ const localEatries = [
       owners: 1,
       isPromoted: true,
       isVerified: true),
-  Eatry(
+  TestEatry(
     id: 2,
+    image: 'assets/eatries/akif.webp',
     name: 'Akif',
     email: 'mgt@akif.com',
     address: '105 rue Tchoou Ablogame Lome-Togo',
@@ -24,8 +26,9 @@ const localEatries = [
     isPromoted: false,
     isVerified: false,
   ),
-  Eatry(
+  TestEatry(
       id: 3,
+      image: 'assets/eatries/ci-gusta.webp',
       name: 'Ci-gusta',
       email: 'mgt@cigusta.com',
       address: '105 rue Tchoou Ablogame Lome-Togo',
@@ -35,10 +38,11 @@ const localEatries = [
       owners: 1,
       isPromoted: true,
       isVerified: true),
-  Eatry(
+  TestEatry(
       id: 4,
-      name: 'Ioka',
-      email: 'mgt@ioka.com',
+      image: 'assets/eatries/chinese.webp',
+      name: 'Dragon Flare',
+      email: 'mgt@drgflare.com',
       address: '105 rue Tchoou Ablogame Lome-Togo',
       phone: '000-888-555',
       employees: 10,
@@ -46,8 +50,9 @@ const localEatries = [
       owners: 1,
       isPromoted: false,
       isVerified: false),
-  Eatry(
+  TestEatry(
       id: 5,
+      image: 'assets/eatries/golden.webp',
       name: 'Golden Plate',
       email: 'mgt@golden.com',
       address: '105 rue Tchoou Ablogame Lome-Togo',
@@ -57,10 +62,23 @@ const localEatries = [
       owners: 1,
       isPromoted: true,
       isVerified: true),
-  Eatry(
+  TestEatry(
       id: 6,
-      name: 'Mc Donalds',
+      image: 'assets/eatries/mac-do.webp',
+      name: "Mc Donald's",
       email: 'mgt@mcdonalds.com',
+      address: '105 rue Tchoou Ablogame Lome-Togo',
+      phone: '000-888-555',
+      employees: 10,
+      managers: 2,
+      owners: 1,
+      isPromoted: true,
+      isVerified: true),
+  TestEatry(
+      id: 6,
+      image: 'assets/static/eatry.webp',
+      name: 'Michelin',
+      email: 'mgt@michelin.com',
       address: '105 rue Tchoou Ablogame Lome-Togo',
       phone: '000-888-555',
       employees: 10,

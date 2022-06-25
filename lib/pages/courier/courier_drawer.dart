@@ -19,6 +19,13 @@ class CourierDrawer extends StatelessWidget {
         child: Column(
           children: [
             Container(
+              alignment: Alignment.topLeft,
+              width: double.infinity,
+              padding: EdgeInsets.all(16),
+              color: Colors.grey[200],
+              child: Image.asset('assets/branding/logo.png', height: 100),
+            ),
+            Container(
               alignment: Alignment.center,
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
@@ -35,19 +42,19 @@ class CourierDrawer extends StatelessWidget {
                     route: '/',
                   ),
                   DrawerTile(
-                    label: 'New delivery',
-                    icon: TablerIcons.square_plus,
+                    label: 'New orders',
+                    icon: TablerIcons.receipt,
                     route: '/order',
-                  ),
-                  DrawerTile(
-                    label: 'Notificatons',
-                    icon: Icons.notifications_rounded,
-                    route: '/notice',
                   ),
                   DrawerTile(
                     label: 'Activity',
                     icon: TablerIcons.activity,
                     route: '/activity',
+                  ),
+                  DrawerTile(
+                    label: 'Messages',
+                    icon: TablerIcons.message_circle,
+                    route: '/messages',
                   ),
                   DrawerTile(
                     label: 'Profile',
@@ -68,7 +75,7 @@ class CourierDrawer extends StatelessWidget {
                   DrawerTile(
                     label: 'Use as client',
                     icon: Icons.person,
-                    route: '/courier-base',
+                    route: '/client-base',
                   ),
                   DrawerTile(
                     label: 'Use as admin',

@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 
 ThemeData customTheme() {
   return ThemeData(
-      scaffoldBackgroundColor: Colors.grey[200],
+      scaffoldBackgroundColor: Colors.grey[100],
       colorScheme: const ColorScheme(
         brightness: Brightness.light,
-        primary: Colors.green,
+        primary: Colors.black,
+        secondary: Colors.green,
+        tertiary: Colors.red,
         onPrimary: Color(0xffffffff),
-        secondary: Colors.lightGreenAccent,
         onSecondary: Color(0xffffffff),
         error: Color(0xffffffff),
         onError: Color(0xffffffff),
-        background: Colors.grey,
+        background: Colors.white,
         onBackground: Color(0xffffffff),
         surface: Color(0xffffffff),
         onSurface: Color(0xffffffff),
@@ -19,7 +20,7 @@ ThemeData customTheme() {
       fontFamily: 'Futura',
       textTheme: const TextTheme(
         headline1: TextStyle(
-          color: Colors.green,
+          color: Colors.black,
           fontWeight: FontWeight.bold,
           fontSize: 36,
         ),
@@ -45,7 +46,7 @@ ThemeData customTheme() {
         ),
         headline6: TextStyle(
           color: Colors.black,
-          fontWeight: FontWeight.bold,
+          // fontWeight: FontWeight.,
           fontSize: 12,
         ),
         bodyText1: TextStyle(

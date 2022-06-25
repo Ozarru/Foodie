@@ -4,6 +4,7 @@ import 'package:tabler_icons/tabler_icons.dart';
 import 'package:get/get.dart';
 
 import '/widgets/widgets.dart';
+import '/controllers/controllers.dart';
 import '/pages/pages.dart';
 import 'client_drawer.dart';
 
@@ -15,23 +16,19 @@ class ClientBase extends StatefulWidget {
 }
 
 class _ClientBaseState extends State<ClientBase> {
+  @override
+  void initState() {
+    super.initState();
+    Get.lazyPut(() => CartController());
+  }
+
   bool isClient = true;
   int _index = 0;
-  final _screens = [ClientHome(), Eatries(), Menu(), Settings()];
+  final _screens = const [ClientHome(), Eatries(), Menu(), Profile()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //     elevation: 0,
-      //     backgroundColor: Colors.transparent,
-      //     iconTheme: IconThemeData(
-      //       color: Colors.black,
-      //     ),
-      //     actions: [
-      //       // searcher(),
-      //       IconButton(onPressed: () {}, icon: Icon(TablerIcons.bell))
-      //     ]),
-      drawer: ClientDrawer(),
+      drawer: const ClientDrawer(),
       body: SafeArea(child: _screens[_index]),
       bottomNavigationBar: BottomNavyBar(
         showElevation: false,
@@ -43,36 +40,36 @@ class _ClientBaseState extends State<ClientBase> {
         },
         items: [
           BottomNavyBarItem(
-            icon: Icon(TablerIcons.home_2),
-            title: Text('Home'),
-            activeColor: Theme.of(context).primaryColor,
+            icon: const Icon(TablerIcons.home_2),
+            title: const Text('Home'),
+            activeColor: Theme.of(context).colorScheme.primary,
             inactiveColor: Colors.grey,
           ),
           BottomNavyBarItem(
-            icon: Icon(TablerIcons.search),
-            title: Text('Find'),
-            activeColor: Theme.of(context).primaryColor,
+            icon: const Icon(TablerIcons.search),
+            title: const Text('Find'),
+            activeColor: Theme.of(context).colorScheme.primary,
             inactiveColor: Colors.grey,
           ),
           BottomNavyBarItem(
-            icon: Icon(TablerIcons.user),
-            title: Text('Profile'),
-            activeColor: Theme.of(context).primaryColor,
+            icon: const Icon(Icons.restaurant),
+            title: const Text('Meals'),
+            activeColor: Theme.of(context).colorScheme.primary,
             inactiveColor: Colors.grey,
           ),
           BottomNavyBarItem(
-            icon: Icon(TablerIcons.settings),
-            title: Text('Settings'),
-            activeColor: Theme.of(context).primaryColor,
+            icon: const Icon(TablerIcons.user),
+            title: const Text('Profile'),
+            activeColor: Theme.of(context).colorScheme.primary,
             inactiveColor: Colors.grey,
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Get.toNamed('/new-hire'),
-        backgroundColor: Theme.of(context).primaryColor,
-        child: Icon(TablerIcons.plus),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () => Get.toNamed('/new-order'),
+      //   backgroundColor: Theme.of(context).colorScheme.primary,
+      //   child: const Icon(TablerIcons.plus),
+      // ),
     );
   }
 }

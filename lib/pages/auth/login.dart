@@ -1,7 +1,6 @@
-import '../controllers/google_auth.dart';
-import 'signup.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../../controllers/controllers.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
@@ -30,7 +29,7 @@ class _LoginState extends State<Login> {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Hi There 😊! \nWelcome Back To Dxter',
+                'Hi There 😊! \nWelcome To Foodie',
                 style: Theme.of(context).textTheme.headline1,
               ),
             ),
@@ -43,41 +42,23 @@ class _LoginState extends State<Login> {
                 child: ElevatedButton.icon(
                     onPressed: () {
                       print('pressed it was, and impresed i am 🙂');
-                      // final provider = Provider.of<GoogleSignInProvider>(
-                      //     context,
-                      //     listen: false);
-                      // provider.googleLogin();
+                      final provider = Provider.of<GoogleSignInProvider>(
+                          context,
+                          listen: false);
+                      provider.googleLogin();
                       print('Logged in, you are! ');
                     },
                     icon: FaIcon(
                       FontAwesomeIcons.google,
                       color: Colors.amber[900],
                     ),
-                    label: Text('Login with Google'),
+                    label: Text('Continue with Google'),
                     style: ElevatedButton.styleFrom(
                       primary: Colors.grey[200],
                       onPrimary: Colors.black,
                       minimumSize: Size(double.infinity, 50),
                     ))),
             Spacer(),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text("Don't have an account yet?"),
-                  GestureDetector(
-                    onTap: () => Get.to(SignUp()),
-                    child: Text(
-                      "Sign up here",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
       ),

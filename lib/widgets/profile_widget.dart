@@ -1,9 +1,5 @@
-import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../pages/profile.dart';
+import '../pages/pages.dart';
 
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget(
@@ -24,20 +20,22 @@ class ProfileWidget extends StatelessWidget {
       child: Center(
         child: Stack(children: [
           buildImage(),
-          // Positioned(
-          //     bottom: 0,
-          //     right: 4,
-          //     child: InkWell(
-          //         onTap: () => Navigator.of(context).push(
-          //             MaterialPageRoute(builder: (context) => EditProfile())),
-          //         child: buildEditIcon(color, context)))
+          Positioned(
+              bottom: 0,
+              right: 4,
+              child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const EditProfile()));
+                  },
+                  child: buildEditIcon(color, context)))
         ]),
       ),
     );
   }
 
   Widget buildImage() {
-    final image = NetworkImage(imagePath);
+    final image = AssetImage(imagePath);
 
     return ClipOval(
       child: Material(
@@ -59,7 +57,7 @@ class ProfileWidget extends StatelessWidget {
         color: Colors.grey.shade50,
         all: 3,
         child: buildCircle(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).colorScheme.secondary,
           // color: Color(0xff00ADFF),
           all: 6,
           child: Icon(

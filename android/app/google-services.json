@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "664014729190",
+    "project_id": "fusee-a0a27",
+    "storage_bucket": "fusee-a0a27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664014729190:android:1ec598df7ce32871d0f027",
+        "android_client_info": {
+          "package_name": "com.it_innovation.fusee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "664014729190-ccuqcq7ssm2c9d4kugk626uksrvq1lgd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqLwCZpZ6OgsJRDXC4Vb7GhJLSVsTeZPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "664014729190-ccuqcq7ssm2c9d4kugk626uksrvq1lgd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
